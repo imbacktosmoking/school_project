@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container text-center">
+  <h1 class="">{{ category.subject.name }}</h1>
+  <ul>
+    {% for post in posts %}
+      {% if category.subject.name == "Physics" and post.subject.name == "Physics" %}
+      <a href="{%url 'details' post.pk%}" > <h2> {{post.title}} </h2> </a> 
+      <h1> {{post.author}}</h1>
+
+        {% elif category.subject.name == "Empowerment_Technologies" and post.subject.name == "Empowerment_Technologies" %}
+
+        <a href="{%url 'details' post.pk%}" > <h2> {{post.title}} </h2> </a> 
+        <h1> {{post.author}}</h1>
+
+             {% elif category.subject.name == "Contemporary_arts" and post.subject.name == "Contemporary_arts" %}
+
+        <a href="{%url 'details' post.pk%}" > <h2> {{post.title}} </h2> </a> 
+        <h1> {{post.author}}</h1>
+
+          {% elif category.subject.name == "Pre_calculus" and post.subject.name == "Pre_calculus" %}
+
+        <a href="{%url 'details' post.pk%}" > <h2> {{post.title}} </h2> </a> 
+        <h1> {{post.author}}</h1>
+
+      {% endif %}
+    {% endfor %}
+  </ul>
+  </div>
+{% endblock %}
